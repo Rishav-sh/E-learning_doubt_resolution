@@ -11,7 +11,7 @@ class WebSocketService {
 
         // Using pure native WebSockets avoids Vite 'global is not defined' crashes from SockJS
         this.client = new Client({
-            brokerURL: 'ws://localhost:8080/ws/websocket',
+            brokerURL: import.meta.env.VITE_WS_URL || 'ws://localhost:8080/ws/websocket',
             connectHeaders: {
                 Authorization: `Bearer ${token}`
             },
