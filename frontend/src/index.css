@@ -5,8 +5,7 @@
 body {
   margin: 0;
   font-family: var(--sans);
-  background-color: #f1f5f9; /* Clean, premium slate gray static background */
-  background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, transparent 70%); /* Subtle top highlight */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   min-height: 100vh;
   color: #333;
 }
