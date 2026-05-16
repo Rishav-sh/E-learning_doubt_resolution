@@ -128,12 +128,12 @@ const LoginUI = ({ onLoginSuccess }) => {
                         {isLoading ? "Processing..." : (isRegistering ? "Register Account" : "Sign In securely")}
                     </button>
                     
-                    <div style={{marginTop: '1rem', fontSize: '0.9rem', color: '#64748b'}}>
+                    <div className="toggle-link-container">
                         {isRegistering ? "Already have an account? " : "Don't have an account? "}
                         <button 
                             type="button" 
                             onClick={() => { setIsRegistering(!isRegistering); setError(""); setSuccessMsg(""); }} 
-                            style={{background: 'none', border: 'none', color: '#3b82f6', fontWeight: 'bold', cursor: 'pointer', padding: 0}}
+                            className="toggle-link-btn"
                         >
                             {isRegistering ? "Sign In" : "Register here"}
                         </button>

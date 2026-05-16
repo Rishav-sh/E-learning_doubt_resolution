@@ -4,88 +4,146 @@
     align-items: center;
     min-height: 100vh;
     width: 100vw;
-    background-color: #f1f5f9;
     font-family: 'Inter', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .login-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
 }
 
 .login-card h2 {
     margin-top: 0;
-    color: #0f172a;
-    font-size: 1.8rem;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .login-card p {
-    color: #64748b;
-    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
 }
 
 .error-banner {
-    background: #fee2e2;
+    background: rgba(254, 226, 226, 0.9);
     color: #b91c1c;
-    padding: 0.75rem;
-    border-radius: 6px;
+    padding: 0.8rem;
+    border-radius: 8px;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
+    border: 1px solid #fecaca;
+}
+
+.success-banner {
+    background: rgba(220, 252, 231, 0.9);
+    color: #166534;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #bbf7d0;
 }
 
 .input-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     text-align: left;
 }
 
 .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #334155;
+    color: #ffffff;
     font-weight: 500;
     font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-.input-group input {
+.input-group input, .input-group select {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid transparent;
+    border-radius: 12px;
     font-size: 1rem;
     box-sizing: border-box;
-    transition: border-color 0.2s;
+    transition: all 0.3s ease;
+    color: #334155;
 }
 
-.input-group input:focus {
+.input-group input:focus, .input-group select:focus {
     outline: none;
     border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
 .login-btn {
     width: 100%;
-    background: #3b82f6;
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
     color: white;
     border: none;
-    padding: 0.875rem;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
     margin-top: 0.5rem;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
-.login-btn:hover {
-    background: #2563eb;
+.login-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+}
+
+.login-btn:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 .login-btn:disabled {
-    background: #93c5fd;
+    background: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.4);
     cursor: not-allowed;
+    box-shadow: none;
+}
+
+.toggle-link-container {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.toggle-link-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.toggle-link-btn:hover {
+    color: #e0e7ff;
 }
