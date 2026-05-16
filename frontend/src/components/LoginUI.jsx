@@ -12,6 +12,7 @@ const LoginUI = ({ onLoginSuccess }) => {
     // Toggle between Login and Registration
     const [isRegistering, setIsRegistering] = useState(false);
     const [registerRole, setRegisterRole] = useState("STUDENT");
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -79,12 +80,34 @@ const LoginUI = ({ onLoginSuccess }) => {
                     
                     <div className="input-group">
                         <label>Password</label>
-                        <input 
-                            type="password" 
-                            value={password} 
-                            onChange={(e) => setPassword(e.target.value)} 
-                            required 
-                        />
+                        <div style={{ position: 'relative' }}>
+                            <input 
+                                type={showPassword ? "text" : "password"} 
+                                value={password} 
+                                onChange={(e) => setPassword(e.target.value)} 
+                                required 
+                                style={{ width: '100%', paddingRight: '3rem', boxSizing: 'border-box' }}
+                            />
+                            <button 
+                                type="button" 
+                                onClick={() => setShowPassword(!showPassword)}
+                                style={{
+                                    position: 'absolute',
+                                    right: '0.75rem',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    color: '#64748b',
+                                    fontSize: '0.85rem',
+                                    fontWeight: 'bold',
+                                    padding: '0'
+                                }}
+                            >
+                                {showPassword ? "Hide" : "Show"}
+                            </button>
+                        </div>
                     </div>
 
                     {isRegistering && (
